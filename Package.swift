@@ -18,17 +18,17 @@ let package = Package(
     targets: [
         .target(
             name: "SKPhotoBrowser",
-            dependencies: ["SKPhotoBrowserObjC"],
+            dependencies: [],              // no more SKPhotoBrowserObjC
             path: "SKPhotoBrowser",
-            exclude: ["Info.plist",
-                      "extensions/ObjC"],
+            exclude: [
+                "Info.plist",
+                "extensions/ObjC"          // exclude the old ObjC files
+            ],
             resources: [
                 .copy("SKPhotoBrowser.bundle")
-            ]),
-        .target(
-            name: "SKPhotoBrowserObjC",
-            path: "SKPhotoBrowser/extensions/ObjC",
-            publicHeadersPath: "."),
+            ]
+        ),
+        // SKPhotoBrowserObjC target removed
         .testTarget(
             name: "SKPhotoBrowserTests",
             dependencies: ["SKPhotoBrowser"],

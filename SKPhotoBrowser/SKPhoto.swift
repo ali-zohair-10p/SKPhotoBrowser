@@ -7,9 +7,9 @@
 //
 
 import UIKit
-#if canImport(SKPhotoBrowserObjC)
-import SKPhotoBrowserObjC
-#endif
+//#if canImport(SKPhotoBrowserObjC)
+//import SKPhotoBrowserObjC
+//#endif
 
 @objc public protocol SKPhotoProtocol: NSObjectProtocol {
     var index: Int { get set }
@@ -106,8 +106,9 @@ open class SKPhoto: NSObject, SKPhotoProtocol {
                     }
                     return
                 }
-
-                if let data = data, let response = response, let image = UIImage.animatedImage(withAnimatedGIFData: data) {
+                
+                if let data = data, let response = response, let image =
+                    UIImage.animatedImage(withAnimatedGIFData: data) {
                     if self.shouldCachePhotoURLImage {
                         if SKCache.sharedCache.imageCache is SKRequestResponseCacheable {
                             SKCache.sharedCache.setImageData(data, response: response, request: task?.originalRequest)
