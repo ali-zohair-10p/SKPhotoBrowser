@@ -6,18 +6,18 @@
 import PackageDescription
 
 let package = Package(
-    name: "SKPhotoBrowser",
+    name: "SKPhotoBrowserKit",
     platforms: [
         .iOS(.v9)
     ],
     products: [
         .library(
-            name: "SKPhotoBrowser",
-            targets: ["SKPhotoBrowser"])
+            name: "SKPhotoBrowserKit",
+            targets: ["SKPhotoBrowserKit"])
     ],
     targets: [
         .target(
-            name: "SKPhotoBrowser",
+            name: "SKPhotoBrowserKit",
             dependencies: [],              // no more SKPhotoBrowserObjC
             path: "SKPhotoBrowser",
             exclude: [
@@ -30,8 +30,8 @@ let package = Package(
         ),
         // SKPhotoBrowserObjC target removed
         .testTarget(
-            name: "SKPhotoBrowserTests",
-            dependencies: ["SKPhotoBrowser"],
+            name: "SKPhotoBrowserKitTests",
+            dependencies: ["SKPhotoBrowserKit"],
             path: "SKPhotoBrowserTests",
             exclude: ["Info.plist"]
         )
